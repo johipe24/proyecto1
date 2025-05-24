@@ -19597,7 +19597,7 @@ async function encryptFile() {
           }, derivedKey, content) 
           .then(function (encrypted) {
             //returns an ArrayBuffer containing the encrypted data
-            resolve(processFinished('CiberEncriptado-' + file.name, [window.atob(DEC.signature), iv, new Uint8Array(encrypted)], 1, password.value)); //create the new file buy adding signature and iv and content
+            resolve(processFinished('jhp-Encriptado-' + file.name, [window.atob(DEC.signature), iv, new Uint8Array(encrypted)], 1, password.value)); //create the new file buy adding signature and iv and content
             //console.log("file has been successuflly encrypted");
             resetInputs(); // reset file and key inputs when done
           })
@@ -19646,7 +19646,7 @@ async function decryptFile() {
           .then(function (decrypted) {
             //returns an ArrayBuffer containing the decrypted data
 
-            resolve(processFinished(file.name.replace('CiberEncriptado-', ''), [new Uint8Array(decrypted)], 2, password.value)); //create new file from the decrypted content
+            resolve(processFinished(file.name.replace('jhp-Encriptado-', ''), [new Uint8Array(decrypted)], 2, password.value)); //create new file from the decrypted content
             //console.log("file has been successuflly decrypted");
             resetInputs(); // reset file and key inputs when done
           })
